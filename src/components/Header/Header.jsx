@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './header.scss';
 
 export const Header = () => {
   return (
@@ -19,7 +20,7 @@ export const Header = () => {
         </div>
         <img
           className="header__photo"
-          src="./images/headerPhonePng.png"
+          src={`${import.meta.env.BASE_URL}images/headerPhonePng.png`}
           alt="Header illustration"
         />
       </header>

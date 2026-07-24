@@ -1,14 +1,13 @@
-@use '../common/scss/variables' as *;
-@use '../common/scss/breakpoints' as *;
+@use '../../common/scss/variables' as *;
+@use '../../common/scss/breakpoints' as *;
 
 .container {
   margin-inline: auto;
   width: 100%;
-  background-image: url('../../public/images/header-bg.svg');
-  background-size: 100% auto;
+  background-image: url('/images/header-bg.svg');
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: cover;
 
   display: flex;
   justify-content: center;

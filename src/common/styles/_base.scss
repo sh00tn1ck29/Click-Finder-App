@@ -1,5 +1,5 @@
-@use '../common/scss/variables' as *;
-@use '../common/scss/breakpoints' as *;
+@use '../scss/variables' as *;
+@use '../scss/breakpoints' as *;
 
 html,
 body {
@@ -7,7 +7,6 @@ body {
   margin: 0;
 }
 
-/* Добавляем стили для React-контейнера */
 #root {
   display: flex;
   flex-direction: column;
@@ -23,7 +22,7 @@ body {
   margin-inline: auto;
   width: 100%;
   padding: 0 10px 24px 10px;
-  flex: 1 0 auto; /* Растягивает контент и прижимает футер вниз */
+  flex: 1 0 auto;
 
   @include desktop {
     padding-inline: 0;

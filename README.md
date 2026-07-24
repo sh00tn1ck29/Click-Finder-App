@@ -9,6 +9,7 @@ An analytical Single Page Application (SPA) built with React to track and displa
 ### Key Features
 
 - **React Component Architecture:** Modular, maintainable structure built with React Hooks (`useState`, `useEffect`) and client-side routing via React Router (`HashRouter`).
+- **Feature-Based Folder Structure:** Clean separation of concerns with dedicated shared components (`Header`, `Footer`, `Pagination`, `Reasons`) and isolated domain features (`stats`).
 - **Dynamic Data Hydration:** Fetches a comprehensive user directory and merges it with individual statistical metrics on the fly via aggregate asynchronous REST API requests.
 - **Interactive Pagination UI:** Custom pagination complete with dynamic page controls for seamless navigation across large data sets.
 - **Responsive & Pixel Perfect:** Crafted strictly following Figma design layouts using a Mobile-First pipeline. Responsive adjustments handle everything from mobile screens up to wide desktops.
@@ -18,10 +19,11 @@ An analytical Single Page Application (SPA) built with React to track and displa
 ### Tech Stack
 
 - **Framework & Routing:** [React](https://reactjs.org/) (Hooks, Component-Driven UI), [React Router](https://reactrouter.com/) (`HashRouter`)
-- **Styling:** [Sass (SCSS)](https://sass-lang.com/) (Modular architecture, custom mixins for responsive layouts)
+- **Build Tooling & Quality:** [Vite](https://vitejs.dev/) (Lightning fast dev server & bundler), [ESLint](https://eslint.org/) (Code linting and formatting)
+- **Styling:** [Sass (SCSS)](https://sass-lang.com/) (Modular `@use` architecture, custom mixins for responsive layouts)
 - **Methodology:** [BEM Class Naming](https://en.bem.info/methodology/) (Block-Element-Modifier for scalable styles)
 - **Logic & Async:** [Modern JavaScript (ES6+)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (Native Fetch API, Promises lifecycle management)
-- **Build & Deployment:** [Webpack](https://webpack.js.org/), [GitHub Pages](https://pages.github.com/) (`gh-pages`)
+- **Deployment:** [GitHub Pages](https://pages.github.com/) (`gh-pages`)
 
 ---
 

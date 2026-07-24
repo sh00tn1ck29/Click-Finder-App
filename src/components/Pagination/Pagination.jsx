@@ -1,5 +1,6 @@
 import React from 'react';
 import { getPaginationRange } from './utils';
+import './_pagination.scss';
 
 export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
   const total = Number(totalPages);

@@ -1,21 +1,24 @@
 import React from 'react';
+import './reasons.scss';
+
+const baseUrl = import.meta.env.BASE_URL;
 
 const REASONS_DATA = [
   {
     id: 1,
-    icon: './images/cleanDesign.png',
+    icon: `${baseUrl}images/cleanDesign.png`,
     title: 'Clean Design',
     description: 'We create intuitive and modern digital interfaces.',
   },
   {
     id: 2,
-    icon: './images/secureData.png',
+    icon: `${baseUrl}images/secureData.png`,
     title: 'Secure Data',
     description: 'Our products are easy to navigate and user friendly.',
   },
   {
     id: 3,
-    icon: './images/RetinaReady.png',
+    icon: `${baseUrl}images/RetinaReady.png`,
     title: 'Retina Ready',
     description: 'Clean code built with modern web development tools.',
   },

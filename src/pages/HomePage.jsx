@@ -1,18 +1,14 @@
 import React from 'react';
-import { Header } from '../components/Header';
-import { Reasons } from '../components/Reasons';
-import { Footer } from '../components/Footer';
+import { Header } from '../components/Header/Header';
+import { Reasons } from '../components/Reasons/Reasons';
+import { Footer } from '../components/Footer/Footer';
 
 export const HomePage = () => {
   return (
     <>
       <Header />
-      <main>
-        <Reasons />
-      </main>
+      <Reasons />
       <Footer />
     </>
   );
 };
-
-export default HomePage;

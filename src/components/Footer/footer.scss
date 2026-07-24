@@ -1,12 +1,12 @@
-@use '../common/scss/variables' as *;
-@use '../common/scss/breakpoints' as *;
+@use '../../common/scss/variables' as *;
+@use '../../common/scss/breakpoints' as *;
 
 .footer {
   display: flex;
   flex-direction: column;
   padding-top: 26px;
   width: 100%;
-  background-image: url('../../public/images/footer-bg.svg');
+  background-image: url('/images/footer-bg.svg');
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;

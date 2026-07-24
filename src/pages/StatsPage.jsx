@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchUsers, fetchAllUsersStats } from '../common/gateways/index.js';
+import { fetchUsers, fetchAllUsersStats } from '../features/stats/gateways/statsGateway.js';
+import { StatsHeader } from '../features/stats/components/StatsHeader/StatsHeader';
+import { StatsTable } from '../features/stats/components/StatsTable/StatsTable';
+import { StatsFooter } from '../features/stats/components/StatsFooter/StatsFooter';
 import { Pagination } from '../components/Pagination/Pagination';
 
 export const StatsPage = () => {
@@ -49,13 +52,7 @@ export const StatsPage = () => {
 
   return (
     <>
-      <header className="header header--bg">
-        <div className="header__container">
-          <div className="header__bottom">
-            <div className="header__text header--size">ClickFinder</div>
-          </div>
-        </div>
-      </header>
+      <StatsHeader />
 
       {isLoading && (
         <div id="linear-progress">
@@ -75,36 +72,7 @@ export const StatsPage = () => {
 
           <h1 className="stats__title">Users statistics</h1>
 
-          <div className="table-holder">
-            <table className="stats-table">
-              <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>First name</th>
-                  <th>Last name</th>
-                  <th>Email</th>
-                  <th>Gender</th>
-                  <th>IP address</th>
-                  <th>Total clicks</th>
-                  <th>Total page views</th>
-                </tr>
-              </thead>
-              <tbody>
-                {usersData.map(user => (
-                  <tr key={user.id}>
-                    <td>{user.id}</td>
-                    <td>{user.first_name}</td>
-                    <td>{user.last_name}</td>
-                    <td>{user.email}</td>
-                    <td>{user.gender}</td>
-                    <td>{user.ip_address}</td>
-                    <td>{user.clicks}</td>
-                    <td>{user.views}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <StatsTable usersData={usersData} />
 
           <Pagination
             totalPages={totalPages}
@@ -114,13 +82,7 @@ export const StatsPage = () => {
         </div>
       </main>
 
-      <footer className="footer footer--bg">
-        <section className="footer__bottom footer__bottom--size">
-          <p className="footer__logo logo footer--size">ClickFinder</p>
-          <p className="footer__rights footer__rights--size">All rights reserved by ThemeTags</p>
-          <p className="footer__copyright">Copyrights © 2025</p>
-        </section>
-      </footer>
+      <StatsFooter />
     </>
   );
 };

@@ -1,5 +1,6 @@
-@use '../common/scss/variables.scss' as *;
-@use '../common/scss/breakpoints.scss' as *;
+@use '../../../../common/scss/variables' as *;
+@use '../../../../common/scss/breakpoints' as *;
+
 .footer {
   &--bg {
     display: flex;
