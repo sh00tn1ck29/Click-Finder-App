@@ -17,7 +17,11 @@ export const Header = () => {
             Learn more
           </Link>
         </div>
-        <img className="header__photo" src="/images/headerPhonePng.png" alt="Header illustration" />
+        <img
+          className="header__photo"
+          src="./images/headerPhonePng.png"
+          alt="Header illustration"
+        />
       </header>
     </div>
   );
