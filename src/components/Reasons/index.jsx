@@ -1,5 +1,5 @@
 import React from 'react';
-import './reasons.scss';
+import './index.scss';
 
 const baseUrl = import.meta.env.BASE_URL;
 

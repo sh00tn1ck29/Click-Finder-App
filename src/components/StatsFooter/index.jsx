@@ -1,5 +1,5 @@
 import React from 'react';
-import './_stats-footer.scss';
+import './index.scss';
 
 export const StatsFooter = () => {
   return (

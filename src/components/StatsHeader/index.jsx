@@ -1,5 +1,5 @@
 import React from 'react';
-import './_stats-header.scss';
+import './index.scss';
 
 export const StatsHeader = () => {
   return (

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchUsers, fetchAllUsersStats } from '../features/stats/gateways/statsGateway.js';
-import { StatsHeader } from '../features/stats/components/StatsHeader/StatsHeader';
-import { StatsTable } from '../features/stats/components/StatsTable/StatsTable';
-import { StatsFooter } from '../features/stats/components/StatsFooter/StatsFooter';
-import { Pagination } from '../components/Pagination/Pagination';
+import { fetchUsers, fetchAllUsersStats } from '../../entities/stats/gateways';
+import { StatsHeader } from '../StatsHeader';
+import { StatsTable } from '../StatsTable';
+import { StatsFooter } from '../StatsFooter';
+import { Pagination } from '../Pagination';
 
 export const StatsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);

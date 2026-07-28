@@ -1,5 +1,5 @@
 import React from 'react';
-import './_stats-table.scss';
+import './index.scss';
 
 export const StatsTable = ({ usersData }) => {
   return (

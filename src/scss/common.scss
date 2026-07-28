@@ -1,0 +1,122 @@
+@use './variables' as *;
+@use './breakpoints' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: $regular-weight;
+  font-size: 16px;
+  color: $white-color;
+  background-color: $white-color;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.button {
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+#linear-progress {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 4px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+
+  .bar {
+    width: 100%;
+    height: 100%;
+    background-color: #3f51b5;
+    animation: loading 1.5s infinite linear;
+    transform-origin: 0% 50%;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%) scaleX(1);
+  }
+
+  50% {
+    transform: translateX(0%) scaleX(0.5);
+  }
+
+  100% {
+    transform: translateX(100%) scaleX(1);
+  }
+}
+
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.2;
+
+  &__link {
+    color: #3a80ba;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__sep,
+  &__current {
+    color: #828282;
+  }
+}
+
+.stats {
+  margin-inline: auto;
+  width: 100%;
+  padding: 0 10px 24px 10px;
+  flex: 1 0 auto;
+
+  @include desktop {
+    padding-inline: 0;
+    margin-inline: auto;
+    max-width: 1180.5px;
+    background-color: $white-color;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  &__crumbs {
+    max-width: 1180.5px;
+    height: 19px;
+    margin: 17px auto 26px auto;
+  }
+
+  &__title {
+    margin-inline: auto;
+    max-width: 1180.5px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111111;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
