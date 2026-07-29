@@ -18,7 +18,11 @@ export const Header = () => {
             Views Stats
           </Link>
         </div>
-        <img src="public/images/mobile.svg" className="header__photo" alt="Mobile Preview" />
+        <img
+          src={`${import.meta.env.BASE_URL}images/mobile.svg`}
+          className="header__photo"
+          alt="Mobile Preview"
+        />
       </header>
     </div>
   );

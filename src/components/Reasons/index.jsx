@@ -12,21 +12,33 @@ export const Reasons = () => {
       </p>
       <ul className="reasons__list">
         <li className="reasons__item card">
-          <img className="reasons__icon" src="public/images/cleanDesign.png" alt="Clean Design" />
+          <img
+            className="reasons__icon"
+            src={`${import.meta.env.BASE_URL}images/cleanDesign.png`}
+            alt="Clean Design"
+          />
           <h3 className="reasons__title">Clean Design</h3>
           <p className="reasons__description">
             Increase sales by showing true dynamics of your website.
           </p>
         </li>
         <li className="reasons__item card">
-          <img className="reasons__icon" src="public/images/secureData.png" alt="Secure Data" />
+          <img
+            className="reasons__icon"
+            src={`${import.meta.env.BASE_URL}images/secureData.png`}
+            alt="Secure Data"
+          />
           <h3 className="reasons__title">Secure Data</h3>
           <p className="reasons__description">
             Build your online store’s trust using Social Proof & Urgency.
           </p>
         </li>
         <li className="reasons__item card">
-          <img className="reasons__icon" src="public/images/RetinaReady.png" alt="Retina Ready" />
+          <img
+            className="reasons__icon"
+            src={`${import.meta.env.BASE_URL}images/RetinaReady.png`}
+            alt="Retina Ready"
+          />
           <h3 className="reasons__title">Retina Ready</h3>
           <p className="reasons__description">
             Realize importance of social proof in customer’s purchase decision.

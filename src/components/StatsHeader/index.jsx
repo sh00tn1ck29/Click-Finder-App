@@ -1,3 +1,5 @@
+import './index.scss';
+
 export const StatsHeader = () => {
   return (
     <header className="header header--bg">
