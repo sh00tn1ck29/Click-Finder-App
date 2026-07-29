@@ -1,20 +1,11 @@
-@use './variables' as *;
-@use './breakpoints' as *;
+@use './variables.scss' as *;
+@use './breakpoints.scss' as *;
 
-* {
-  box-sizing: border-box;
-}
-
+/* --- BASE & LAYOUT --- */
 html,
 body {
   height: 100%;
   margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: $regular-weight;
-  font-size: 16px;
-  color: $white-color;
-  background-color: $white-color;
 }
 
 #root {
@@ -23,15 +14,82 @@ body {
   min-height: 100vh;
 }
 
-.button {
-  text-align: center;
-  font-style: normal;
-  font-weight: 400;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+body {
+  background-color: $white-color;
+  position: relative;
 }
 
+.stats {
+  margin-inline: auto;
+  width: 100%;
+  padding: 0 10px 24px 10px;
+  flex: 1;
+
+  @include desktop {
+    padding-inline: 0;
+    margin-inline: auto;
+    max-width: 1180.5px;
+    background-color: $white-color;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  &__crumbs {
+    max-width: 1180.5px;
+    height: 19px;
+    margin: 17px auto 26px auto;
+  }
+
+  &__title {
+    margin-inline: auto;
+    max-width: 1180.5px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111111;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --- CRUMBS --- */
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  height: 19px;
+  font-size: 16px;
+
+  &__link {
+    line-height: 19px;
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #3a80ba;
+      text-decoration: underline;
+    }
+  }
+
+  &__sep {
+    margin: -2px 7px 0 6px;
+    font-size: 24px;
+    line-height: 19px;
+    color: #cccccc;
+    user-select: none;
+  }
+
+  &__current {
+    line-height: 19px;
+    color: #3a80ba;
+    font-weight: 400;
+  }
+}
+
+/* --- LOADER --- */
 #linear-progress {
   position: absolute;
   top: 72px;
@@ -63,60 +121,4 @@ body {
   100% {
     transform: translateX(100%) scaleX(1);
   }
-}
-
-.crumbs {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  line-height: 1.2;
-
-  &__link {
-    color: #3a80ba;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &__sep,
-  &__current {
-    color: #828282;
-  }
-}
-
-.stats {
-  margin-inline: auto;
-  width: 100%;
-  padding: 0 10px 24px 10px;
-  flex: 1 0 auto;
-
-  @include desktop {
-    padding-inline: 0;
-    margin-inline: auto;
-    max-width: 1180.5px;
-    background-color: $white-color;
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  &__crumbs {
-    max-width: 1180.5px;
-    height: 19px;
-    margin: 17px auto 26px auto;
-  }
-
-  &__title {
-    margin-inline: auto;
-    max-width: 1180.5px;
-    font-size: 32px;
-    font-weight: 700;
-    color: #111111;
-    margin-top: 0;
-    margin-bottom: 16px;
-  }
-}
-
-.hidden {
-  display: none !important;
 }

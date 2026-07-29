@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.scss';
 
@@ -7,23 +6,22 @@ export const Header = () => {
     <div className="container">
       <header className="header">
         <div className="header__text">
-          <h1 className="header__logo">ClickFinder</h1>
-          <p className="header__headline">Brainstorming for desired perfect usability</p>
+          <p className="header__logo logo">ClickFinder</p>
+          <h3 className="header__headline">
+            <strong>Brainstorming</strong> for desired perfect Usability
+          </h3>
           <p className="header__description">
             Our design projects are fresh and simple and will benefit your business greatly. Learn
             more about our work!
           </p>
-
-          <Link to="/stats" className="header__btn button">
-            Learn more
+          <Link className="header__btn button" to="/users/stats">
+            Views Stats
           </Link>
         </div>
-        <img
-          className="header__photo"
-          src={`${import.meta.env.BASE_URL}images/headerPhonePng.png`}
-          alt="Header illustration"
-        />
+        <img src="public/images/mobile.svg" className="header__photo" alt="Mobile Preview" />
       </header>
     </div>
   );
 };
+
+export default Header;

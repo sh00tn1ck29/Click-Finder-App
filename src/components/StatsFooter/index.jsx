@@ -1,6 +1,3 @@
-import React from 'react';
-import './index.scss';
-
 export const StatsFooter = () => {
   return (
     <footer className="footer footer--bg">
@@ -12,3 +9,5 @@ export const StatsFooter = () => {
     </footer>
   );
 };
+
+export default StatsFooter;

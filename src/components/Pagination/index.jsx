@@ -1,14 +1,14 @@
-import React from 'react';
-import { getPaginationRange } from '../../utils/index';
-import './index.scss';
+import { getPaginationRange } from '../../utils/index.js';
 
 export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
   const total = Number(totalPages);
   const current = Number(currentPage);
+
   const pageRange = getPaginationRange(current, total);
 
   return (
-    <div className="pagination stats__pagination">
+    <div className="pagination stats__pagination" id="pagination">
+      {/* Кнопка "Назад" */}
       <button
         className="pagination__arrow"
         disabled={current === 1}
@@ -30,6 +30,7 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
         </svg>
       </button>
 
+      {/* Кнопки страниц */}
       {pageRange.map((page, index) => {
         if (page === '...') {
           return (
@@ -46,13 +47,16 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
           <button
             key={pageNumber}
             className={`pagination__button ${isActive ? 'pagination__button--active' : ''}`}
-            onClick={() => current !== pageNumber && onPageChange(pageNumber)}
+            onClick={() => {
+              if (current !== pageNumber) onPageChange(pageNumber);
+            }}
           >
             {page}
           </button>
         );
       })}
 
+      {/* Кнопка "Вперед" */}
       <button
         className="pagination__arrow"
         disabled={current === total}
@@ -76,3 +80,5 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
     </div>
   );
 };
+
+export default Pagination;

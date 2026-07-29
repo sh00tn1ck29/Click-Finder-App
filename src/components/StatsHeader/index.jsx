@@ -1,6 +1,3 @@
-import React from 'react';
-import './index.scss';
-
 export const StatsHeader = () => {
   return (
     <header className="header header--bg">
@@ -12,3 +9,5 @@ export const StatsHeader = () => {
     </header>
   );
 };
+
+export default StatsHeader;

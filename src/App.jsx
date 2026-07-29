@@ -1,14 +1,14 @@
 import React from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { HomePage } from './components/HomePage';
 import { StatsPage } from './components/StatsPage';
 
 export const App = () => {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/stats" component={StatsPage} />
+        <Route path="/users/stats" component={StatsPage} />
       </Switch>
     </Router>
   );
