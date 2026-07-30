@@ -1,4 +1,6 @@
-export const StatsTable = ({ users, stats }) => {
+import './index.scss';
+
+export const StatsTable = ({ users = [], stats = [] }) => {
   const safeStats = Array.isArray(stats) ? stats : [];
 
   return (

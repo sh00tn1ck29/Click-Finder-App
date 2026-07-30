@@ -1,6 +1,6 @@
-import Header from '../Header';
-import Reasons from '../Reasons';
-import Footer from '../Footer';
+import Header from '@components/Header';
+import Reasons from '@components/Reasons';
+import Footer from '@components/Footer';
 
 export const HomePage = () => {
   return (

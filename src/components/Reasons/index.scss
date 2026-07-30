@@ -1,5 +1,5 @@
-@use '../../scss/variables.scss' as *;
-@use '../../scss/breakpoints.scss' as *;
+@use '@/common/scss/variables.scss' as *;
+@use '@/common/scss/breakpoints.scss' as *;
 
 .reasons {
   display: flex;

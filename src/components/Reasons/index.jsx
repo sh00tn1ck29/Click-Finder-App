@@ -1,3 +1,4 @@
+import { reasonsConfig } from './configs/index.js';
 import './index.scss';
 
 export const Reasons = () => {
@@ -10,40 +11,15 @@ export const Reasons = () => {
         Our design projects are fresh and simple and will benefit your business greatly. Learn more
         about our work!
       </p>
+
       <ul className="reasons__list">
-        <li className="reasons__item card">
-          <img
-            className="reasons__icon"
-            src={`${import.meta.env.BASE_URL}images/cleanDesign.png`}
-            alt="Clean Design"
-          />
-          <h3 className="reasons__title">Clean Design</h3>
-          <p className="reasons__description">
-            Increase sales by showing true dynamics of your website.
-          </p>
-        </li>
-        <li className="reasons__item card">
-          <img
-            className="reasons__icon"
-            src={`${import.meta.env.BASE_URL}images/secureData.png`}
-            alt="Secure Data"
-          />
-          <h3 className="reasons__title">Secure Data</h3>
-          <p className="reasons__description">
-            Build your online store’s trust using Social Proof & Urgency.
-          </p>
-        </li>
-        <li className="reasons__item card">
-          <img
-            className="reasons__icon"
-            src={`${import.meta.env.BASE_URL}images/RetinaReady.png`}
-            alt="Retina Ready"
-          />
-          <h3 className="reasons__title">Retina Ready</h3>
-          <p className="reasons__description">
-            Realize importance of social proof in customer’s purchase decision.
-          </p>
-        </li>
+        {reasonsConfig.map(({ id, icon, title, description }) => (
+          <li key={id} className="reasons__item card">
+            <img className="reasons__icon" src={`${import.meta.env.BASE_URL}${icon}`} alt={title} />
+            <h3 className="reasons__title">{title}</h3>
+            <p className="reasons__description">{description}</p>
+          </li>
+        ))}
       </ul>
     </section>
   );

@@ -1,4 +1,5 @@
-import { getPaginationRange } from '../../utils/index.js';
+import { getPaginationRange } from './utils/index.js';
+import './index.scss';
 
 export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
   const total = Number(totalPages);
@@ -8,7 +9,6 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
 
   return (
     <div className="pagination stats__pagination" id="pagination">
-      {/* Кнопка "Назад" */}
       <button
         className="pagination__arrow"
         disabled={current === 1}
@@ -30,7 +30,6 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
         </svg>
       </button>
 
-      {/* Кнопки страниц */}
       {pageRange.map((page, index) => {
         if (page === '...') {
           return (
@@ -56,7 +55,6 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }) => {
         );
       })}
 
-      {/* Кнопка "Вперед" */}
       <button
         className="pagination__arrow"
         disabled={current === total}

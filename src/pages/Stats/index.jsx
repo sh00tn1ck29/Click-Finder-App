@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import StatsHeader from '../StatsHeader';
-import StatsFooter from '../StatsFooter';
-import StatsTable from '../StatsTable';
-import Pagination from '../Pagination';
-import { fetchUsers, fetchAllUsersStats } from '../../entities/stats/gateways/index.js';
+import Header from '@components/Header';
+import Footer from '@components/Footer';
+import StatsTable from '@components/StatsTable';
+import Pagination from '@components/Pagination';
+import { fetchUsers, fetchAllUsersStats } from '@components/StatsTable/gateways/index.js';
 
 export const StatsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,7 +21,10 @@ export const StatsPage = () => {
     fetchUsers(currentPage, limit).then(response => {
       if (response && response.users && response.users.length > 0) {
         setUsers(response.users);
-        setTotalPages(response.totalPages);
+
+        if (response.totalPages && response.totalPages > 0) {
+          setTotalPages(response.totalPages);
+        }
 
         const pageUserIds = response.users.map(u => u.id);
 
@@ -43,9 +46,8 @@ export const StatsPage = () => {
 
   return (
     <>
-      <StatsHeader />
+      <Header isStatsPage={true} />
 
-      {/* Лоадер */}
       <div id="linear-progress" className={isLoading ? '' : 'hidden'}>
         <div className="bar"></div>
       </div>
@@ -72,7 +74,7 @@ export const StatsPage = () => {
         </div>
       </main>
 
-      <StatsFooter />
+      <Footer isStatsPage={true} />
     </>
   );
 };

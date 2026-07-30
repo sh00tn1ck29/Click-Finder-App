@@ -1,7 +1,19 @@
 import { Link } from 'react-router-dom';
 import './index.scss';
 
-export const Header = () => {
+export const Header = ({ isStatsPage = false }) => {
+  if (isStatsPage) {
+    return (
+      <header className="header header--bg">
+        <div className="header__container">
+          <div className="header__bottom">
+            <div className="header__text header--size">ClickFinder</div>
+          </div>
+        </div>
+      </header>
+    );
+  }
+
   return (
     <div className="container">
       <header className="header">

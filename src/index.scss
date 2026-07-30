@@ -1,14 +1,6 @@
-@use './scss/variables.scss' as *;
-@use './scss/breakpoints.scss' as *;
-@use './scss/common.scss' as *;
-
-@use './components/Header/index.scss' as *;
-@use './components/Reasons/index.scss' as *;
-@use './components/Footer/index.scss' as *;
-@use './components/StatsHeader/index.scss' as *;
-@use './components/StatsTable/index.scss' as *;
-@use './components/Pagination/index.scss' as *;
-@use './components/StatsFooter/index.scss' as *;
+@use '@/common/scss/variables.scss' as *;
+@use '@/common/scss/breakpoints.scss' as *;
+@use '@/common/scss/common.scss' as *;
 
 * {
   box-sizing: border-box;
