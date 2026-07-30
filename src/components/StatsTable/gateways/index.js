@@ -1,5 +1,7 @@
-const USER_DATA_API = '/api/users';
-const STATS_API = '/api/users/statistics';
+const BASE_URL = 'https://appco-snowy.vercel.app';
+
+const USER_DATA_API = `${BASE_URL}/api/users`;
+const STATS_API = `${BASE_URL}/api/users/statistics`;
 const FETCH_ERROR_MESSAGE = 'Internal server error. Please try again later.';
 
 export const fetchUsers = (page = 1, limit = 16) => {
