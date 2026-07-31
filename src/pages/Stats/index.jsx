@@ -4,6 +4,7 @@ import Header from '@components/Header';
 import Footer from '@components/Footer';
 import StatsTable from '@components/StatsTable';
 import Pagination from '@components/Pagination';
+import Breadcrumbs from '@components/Breadcrumbs';
 import { fetchUsers, fetchAllUsersStats } from '@components/StatsTable/gateways/index.js';
 
 export const StatsPage = () => {
@@ -54,13 +55,8 @@ export const StatsPage = () => {
 
       <main className="stats">
         <div className="stats__container">
-          <nav className="crumbs stats__crumbs">
-            <Link to="/" className="crumbs__link">
-              Main page
-            </Link>
-            <span className="crumbs__sep">›</span>
-            <span className="crumbs__current">User statistics</span>
-          </nav>
+          {/* ✅ Новый чистый компонент вместо старой разметки */}
+          <Breadcrumbs />
 
           <h1 className="stats__title">Users statistics</h1>
 
