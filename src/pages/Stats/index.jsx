@@ -55,7 +55,6 @@ export const StatsPage = () => {
 
       <main className="stats">
         <div className="stats__container">
-          {/* ✅ Новый чистый компонент вместо старой разметки */}
           <Breadcrumbs />
 
           <h1 className="stats__title">Users statistics</h1>
