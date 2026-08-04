@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 import StatsTable from '@components/StatsTable';
@@ -9,10 +8,12 @@ import { fetchUsers, fetchAllUsersStats } from '@components/StatsTable/gateways/
 
 export const StatsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(63);
-  const [users, setUsers] = useState([]);
-  const [stats, setStats] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [tableData, setTableData] = useState({
+    users: [],
+    stats: [],
+    totalPages: 63,
+  });
 
   const limit = 16;
 
@@ -21,21 +22,22 @@ export const StatsPage = () => {
 
     fetchUsers(currentPage, limit).then(response => {
       if (response && response.users && response.users.length > 0) {
-        setUsers(response.users);
-
-        if (response.totalPages && response.totalPages > 0) {
-          setTotalPages(response.totalPages);
-        }
-
         const pageUserIds = response.users.map(u => u.id);
 
         fetchAllUsersStats(pageUserIds).then(statsList => {
-          setStats(statsList);
+          setTableData({
+            users: response.users,
+            stats: statsList,
+            totalPages: response.totalPages && response.totalPages > 0 ? response.totalPages : 63,
+          });
           setIsLoading(false);
         });
       } else {
-        setUsers([]);
-        setStats([]);
+        setTableData(prev => ({
+          ...prev,
+          users: [],
+          stats: [],
+        }));
         setIsLoading(false);
       }
     });
@@ -47,10 +49,10 @@ export const StatsPage = () => {
 
   return (
     <>
-      <Header isStatsPage={true} />
+      <Header isStatsPage />
 
       <div id="linear-progress" className={isLoading ? '' : 'hidden'}>
-        <div className="bar"></div>
+        <div className="bar" />
       </div>
 
       <main className="stats">
@@ -59,17 +61,17 @@ export const StatsPage = () => {
 
           <h1 className="stats__title">Users statistics</h1>
 
-          <StatsTable users={users} stats={stats} />
+          <StatsTable users={tableData.users} stats={tableData.stats} />
 
           <Pagination
-            totalPages={totalPages}
+            totalPages={tableData.totalPages}
             currentPage={currentPage}
             onPageChange={handlePageChange}
           />
         </div>
       </main>
 
-      <Footer isStatsPage={true} />
+      <Footer isStatsPage />
     </>
   );
 };
