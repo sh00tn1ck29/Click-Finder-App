@@ -5,7 +5,7 @@ import { StatsPage } from './pages/Stats';
 
 export const App = () => {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router basename={/Click-Finder-App/}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/users/stats" element={<StatsPage />} />
