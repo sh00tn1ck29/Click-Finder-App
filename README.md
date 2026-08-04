@@ -1,6 +1,6 @@
 # Click-Finder-App
 
-### [Live Demo](https://sh00tn1ck29.github.io/Click-Finder-App/)
+### [Live Demo](https://click-finder-application-git-main-sh00tn1ck29s-projects.vercel.app/)
 
 An analytical Single Page Application (SPA) built with React to track and display website user activity statistics. The project integrates with an external REST API to fetch user data and performance metrics dynamically, presenting them in an optimized, interactive table.
 
