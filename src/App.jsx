@@ -5,7 +5,7 @@ import { StatsPage } from './pages/Stats';
 
 export const App = () => {
   return (
-    <Router basename={'/Click-Finder-App/'}>
+    <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/users/stats" element={<StatsPage />} />
